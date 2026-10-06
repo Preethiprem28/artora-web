@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTORA | Art & Handmade Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+
+    <div class="logo">
+        ARTORA
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="#shop">
+            Shop
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <span id="userWelcome"></span>
+
+        <a href="login.html" id="loginLink">
+            Login
+        </a>
+
+        <span class="cart" onclick="viewCart()">
+            🛒 <b id="cartCount">0</b>
+        </span>
+
+    </nav>
+
+</header>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="small-title">
+            DISCOVER • CREATE • SUPPORT
+        </p>
+        <h1>
+            Art that tells a story.
+        </h1>
+        <p>
+            Discover beautiful artwork and handmade products
+            created by independent artists and talented makers.
+        </p>
+        <div class="hero-buttons">
+
+            <a href="#shop" class="btn">
+                Explore Collection
+            </a>
+
+            <a href="seller.html" class="outline-btn">
+                Sell Your Work
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <p>EXPLORE</p>
+
+        <h2>Shop by Category</h2>
+
+        <span>
+            Find something special for every style.
+        </span>
+
+    </div>
+<div class="categories">
+
+
+    <!-- PAINTINGS -->
+
+    <div class="category" onclick="filterProducts('Painting')">
+
+        <div class="category-icon">
+
+            <img
+                src="Images/Painting.jpeg"
+                alt="Paintings"
+            >
+
+        </div>
+
+        <h3>Paintings</h3>
+
+        <p>Original artwork</p>
+
+    </div>
+
+
+    <!-- POTTERY -->
+
+    <div class="category" onclick="filterProducts('Pottery')">
+
+        <div class="category-icon">
+
+            <img
+                src="Images/pottery.jpeg"
+                alt="Pottery"
+            >
+
+        </div>
+
+        <h3>Pottery</h3>
+
+        <p>Handcrafted ceramics</p>
+
+    </div>
+
+
+    <!-- JEWELRY -->
+
+    <div class="category" onclick="filterProducts('Jewelry')">
+
+        <div class="category-icon">
+
+            <img
+                src="Images/jewelry.jpeg"
+                alt="Jewelry"
+            >
+
+        </div>
+
+        <h3>Jewelry</h3>
+
+        <p>Unique accessories</p>
+
+    </div>
+
+
+    <!-- HANDMADE CRAFTS -->
+
+    <div class="category" onclick="filterProducts('Crafts')">
+
+        <div class="category-icon">
+
+            <img
+                src="Images/crafts.png"
+                alt="Handmade Crafts"
+            >
+
+        </div>
+
+        <h3>Handmade Crafts</h3>
+
+        <p>Made with love</p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section class="section shop-section" id="shop">
+
+    <div class="shop-top">
+
+        <div>
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Featured Products</h2>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                onkeyup="searchProducts()"
+            >
+
+            🔎
+
+        </div>
+
+    </div>
+
+
+    <!-- Filter buttons -->
+
+    <div class="filters">
+
+        <button onclick="filterProducts('all')">
+            All
+        </button>
+
+        <button onclick="filterProducts('Painting')">
+            Paintings
+        </button>
+
+        <button onclick="filterProducts('Pottery')">
+            Pottery
+        </button>
+
+        <button onclick="filterProducts('Jewelry')">
+            Jewelry
+        </button>
+
+        <button onclick="filterProducts('Crafts')">
+            Crafts
+        </button>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <div class="products" id="productContainer">
+
+
+        <!-- Product 1 -->
+
+        <div class="product" data-category="Painting">
+
+            <div class="product-image painting">
+                🎨
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                PAINTING
+            </p>
+
+            <h3>Abstract Dreams</h3>
+
+            <p class="artist">
+                by Ananya Art
+            </p>
+
+            <div class="rating">
+                ★★★★★ <span>(24)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹1,500</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 2 -->
+
+        <div class="product" data-category="Painting">
+
+            <div class="product-image painting">
+                🌅
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                PAINTING
+            </p>
+
+            <h3>Sunset Memories</h3>
+
+            <p class="artist">
+                by Kavya Studio
+            </p>
+
+            <div class="rating">
+                ★★★★☆ <span>(18)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹2,100</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 3 -->
+
+        <div class="product" data-category="Painting">
+
+            <div class="product-image painting">
+                🌸
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                PAINTING
+            </p>
+
+            <h3>Blooming Garden</h3>
+
+            <p class="artist">
+                by Riya Arts
+            </p>
+
+            <div class="rating">
+                ★★★★★ <span>(31)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹1,800</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 4 -->
+
+        <div class="product" data-category="Painting">
+
+            <div class="product-image painting">
+                🌊
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                PAINTING
+            </p>
+
+            <h3>Ocean Blue</h3>
+
+            <p class="artist">
+                by Meera Canvas
+            </p>
+
+            <div class="rating">
+                ★★★★☆ <span>(15)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹2,400</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 5 -->
+
+        <div class="product" data-category="Pottery">
+
+            <div class="product-image pottery">
+                🏺
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                POTTERY
+            </p>
+
+            <h3>Ceramic Vase</h3>
+
+            <p class="artist">
+                by Meera Pottery
+            </p>
+
+            <div class="rating">
+                ★★★★★ <span>(42)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹850</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 6 -->
+
+        <div class="product" data-category="Pottery">
+
+            <div class="product-image pottery">
+                🫖
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                POTTERY
+            </p>
+
+            <h3>Clay Tea Set</h3>
+
+            <p class="artist">
+                by EarthCraft
+            </p>
+
+            <div class="rating">
+                ★★★★☆ <span>(27)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹1,200</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 7 -->
+
+        <div class="product" data-category="Pottery">
+
+            <div class="product-image pottery">
+                🪴
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                POTTERY
+            </p>
+
+            <h3>Mini Plant Pot</h3>
+
+            <p class="artist">
+                by Clay Corner
+            </p>
+
+            <div class="rating">
+                ★★★★★ <span>(36)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹450</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 8 -->
+
+        <div class="product" data-category="Pottery">
+
+            <div class="product-image pottery">
+                🏺
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                POTTERY
+            </p>
+
+            <h3>Rustic Bowl</h3>
+
+            <p class="artist">
+                by Terra Works
+            </p>
+
+            <div class="rating">
+                ★★★★☆ <span>(19)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹700</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 9 -->
+
+        <div class="product" data-category="Jewelry">
+
+            <div class="product-image jewelry">
+                💍
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                JEWELRY
+            </p>
+            <h3>Beaded Necklace</h3>
+            <p class="artist">
+                by Riya Handmade
+            </p>
+            <div class="rating">
+                ★★★★★ <span>(48)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹600</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 10 -->
+
+        <div class="product" data-category="Jewelry">
+
+            <div class="product-image jewelry">
+                💎
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                JEWELRY
+            </p>
+
+            <h3>Crystal Bracelet</h3>
+
+            <p class="artist">
+                by Pearl Studio
+            </p>
+
+            <div class="rating">
+                ★★★★☆ <span>(21)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹750</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 11 -->
+
+        <div class="product" data-category="Jewelry">
+
+            <div class="product-image jewelry">
+                📿
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                JEWELRY
+            </p>
+
+            <h3>Handmade Beads</h3>
+
+            <p class="artist">
+                by Aanya Crafts
+            </p>
+
+            <div class="rating">
+                ★★★★★ <span>(29)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹500</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 12 -->
+
+        <div class="product" data-category="Jewelry">
+
+            <div class="product-image jewelry">
+                🪷
+
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+
+            <p class="category-name">
+                JEWELRY
+            </p>
+
+            <h3>Floral Earrings</h3>
+
+            <p class="artist">
+                by Bloom Designs
+            </p>
+
+            <div class="rating">
+                ★★★★☆ <span>(17)</span>
+            </div>
+
+            <div class="product-bottom">
+
+                <h4>₹650</h4>
+
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 13 -->
+
+        <div class="product" data-category="Crafts">
+
+            <div class="product-image crafts">
+                🧶
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+            <p class="category-name">
+                CRAFTS
+            </p>
+            <h3>Handmade Wall Art</h3>
+            <p class="artist">
+                by Craft House
+            </p>
+            <div class="rating">
+                ★★★★★ <span>(33)</span>
+            </div>
+            <div class="product-bottom">
+                <h4>₹900</h4>
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product" data-category="Crafts">
+            <div class="product-image crafts">
+                🧸
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+            <p class="category-name">
+                CRAFTS
+            </p>
+            <h3>Handmade Toy</h3>
+            <p class="artist">
+                by Tiny Makers
+            </p>
+            <div class="rating">
+                ★★★★☆ <span>(14)</span>
+            </div>
+            <div class="product-bottom">
+                <h4>₹550</h4>
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product" data-category="Crafts">
+            <div class="product-image crafts">
+                🕯️
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+            <p class="category-name">
+                CRAFTS
+            </p>
+            <h3>Decorative Candle</h3>
+            <p class="artist">
+                by Cozy Creations
+            </p>
+            <div class="rating">
+                ★★★★★ <span>(39)</span>
+            </div>
+            <div class="product-bottom">
+                <h4>₹400</h4>
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product" data-category="Crafts">
+            <div class="product-image crafts">
+                🧺
+                <span class="wishlist"
+                    onclick="addWishlist(this)">
+                    ♡
+                </span>
+            </div>
+            <p class="category-name">
+                CRAFTS
+            </p>
+            <h3>Woven Basket</h3>
+            <p class="artist">
+                by Natural Crafts
+            </p>
+            <div class="rating">
+                ★★★★☆ <span>(26)</span>
+            </div>
+            <div class="product-bottom">
+                <h4>₹950</h4>
+                <button onclick="addToCart(this)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="seller-section" id="sell">
+
+    <div>
+
+        <p>FOR CREATORS</p>
+
+        <h2>Turn Your Creativity Into a Business</h2>
+
+        <p>
+            Are you an artist or handmade creator?
+            Join ARTORA and showcase your work to customers.
+        </p>
+
+        <button onclick="startSelling()">
+            Start Selling
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="section-heading">
+
+        <p>ABOUT US</p>
+
+        <h2>Made by Artists. Loved by Everyone.</h2>
+
+    </div>
+
+    <p class="about-text">
+
+        ARTORA is an online marketplace created to connect
+        independent artists and handmade creators with people
+        looking for unique products.
+
+        From original paintings to handmade jewelry and pottery,
+        every product has a story behind it.
+
+    </p>
+
+</section>
+<section class="newsletter">
+    <h2>Stay Inspired</h2>
+    <p>
+        Get updates about new collections and featured creators.
+    </p>
+    <div>
+        <input
+            type="email"
+            placeholder="Enter your email"
+        >
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
+    </div>
+</section>
+<footer>
+    <div class="footer-content">
+        <div>
+            <h2>ARTORA</h2>
+            <p>
+                Art • Handmade • Creativity
+            </p>
+        </div>
+        <div>
+            <h3>Explore</h3>
+            <a href="#shop">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#sell">Sell</a>
+        </div>
+        <div>
+            <h3>Account</h3>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2026 ARTORA. All Rights Reserved.
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

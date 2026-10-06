@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sell Your Work - ARTORA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <h2 class="brand">ARTORA</h2>
+
+            <div class="nav-links">
+
+                <a href="index.html">Home</a>
+                <a href="index.html#shop">Shop</a>
+                <a href="seller.html">Sell</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Seller Section -->
+
+    <section class="seller-section">
+
+        <div class="seller-container">
+
+            <h1>Sell Your Artwork</h1>
+
+            <p>
+                Share your creativity with the ARTORA community.
+                Add your artwork or handmade product below.
+            </p>
+
+
+            <form id="productForm">
+
+                <!-- Product Name -->
+
+                <div class="form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                    >
+
+                    <small id="productNameError"></small>
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Painting">
+                            Painting
+                        </option>
+
+                        <option value="Pottery">
+                            Pottery
+                        </option>
+
+                        <option value="Jewelry">
+                            Jewelry
+                        </option>
+
+                        <option value="Handmade Crafts">
+                            Handmade Crafts
+                        </option>
+
+                    </select>
+
+                    <small id="categoryError"></small>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="form-group">
+
+                    <label for="price">
+                        Price (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="price"
+                        placeholder="Enter price"
+                    >
+
+                    <small id="priceError"></small>
+
+                </div>
+
+
+                <!-- Seller Name -->
+
+                <div class="form-group">
+
+                    <label for="sellerName">
+                        Seller Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sellerName"
+                        placeholder="Enter your name"
+                    >
+
+                    <small id="sellerNameError"></small>
+
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="form-group">
+
+                    <label for="image">
+                        Image File Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="image"
+                        placeholder="Example: painting5.jpg"
+                    >
+
+                    <small id="imageError"></small>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Describe your product"
+                    ></textarea>
+
+                    <small id="descriptionError"></small>
+
+                </div>
+
+
+                <button type="submit">
+                    Add Product
+                </button>
+
+
+                <p id="productMessage"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
